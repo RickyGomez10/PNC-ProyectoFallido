@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form th:action="@{/verificar}" th:object="${usuario}" method="post">
+
+<h1> Login </h1>
+
+<label for ="user">Usuario:</label> <input type="text" name="user" th:field="*{usuario}">
+
+<label for ="clave">Clave:</label> <input type="text" name="clave" th:field="*{clave}">
+
+<input type="submit" value="Iniciar"> <br> <br>
+
+</form>
+
+
+</body>
+</html>
