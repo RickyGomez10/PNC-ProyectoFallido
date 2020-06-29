@@ -8,15 +8,7 @@ import com.uca.capas.domain.Usuario;
 
 public interface UsuarioService {
 	
+	//Encontrar usuario por ID
 	public Usuario findUsuarioById(String codigo) throws Exception;
 	
-	public List<Usuario> findAll() throws DataAccessException;
-	
-	public Usuario findOne(String codigo) throws DataAccessException;
-	
-	public void insertar(Usuario usuario) throws DataAccessException;
-	
-	public void eliminar(String codigo) throws DataAccessException;
-
-
 }

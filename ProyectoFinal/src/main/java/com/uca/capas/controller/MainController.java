@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -32,36 +34,36 @@ public class MainController {
 	
 	
 	@RequestMapping("/verificar")
-	public ModelAndView verificar(@ModelAttribute Usuario us) {
-		ModelAndView mav = new ModelAndView();
-		Usuario usuario = new Usuario();
-		
+	public @ResponseBody Usuario verificar(@RequestParam String user, @RequestParam String clave) {
 		
 		try {
-			usuario = usuarioService.findUsuarioById(us.getUsuario());
+			Usuario usuario = usuarioService.findUsuarioById(user);
 			
-			if(usuario.getUsuario().equals(us.getUsuario())) {
-				if(usuario.getUsuario().equals(us.getClave())) {
-					mav.addObject("usuario", usuario);
-					mav.setViewName("Si");
+			if(usuario.getUsuario().equals(user)) {
+				System.out.println("Si");	
+				if(usuario.getClave().equals(clave)) {
+				System.out.println("Si");	
+				return usuario;
 				}else {
-					mav.setViewName("Error");
+					System.out.println("no contra");	
 				}
 			}else {
-				mav.setViewName("Error");
+				System.out.println("no usuario");	
+				return usuario;
 			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 			
-			mav.addObject("usuario", usuario);
+			System.out.println("error");	
 			
 		}
+		return null;
 		
 		
 		
 		
-		return mav;
+	
 	}
 	
 }

@@ -6,13 +6,13 @@
 </head>
 <body>
 
-<form th:action="@{/verificar}" th:object="${usuario}" method="post">
+<form th:action="@{/verificar}"  method="post">
 
 <h1> Login </h1>
 
-<label for ="user">Usuario:</label> <input type="text" name="user" th:field="*{usuario}">
+<label for ="user">Usser:</label> <input type="text" name="user">
 
-<label for ="clave">Clave:</label> <input type="text" name="clave" th:field="*{clave}">
+<label for ="clave">pass:</label> <input type="text" name="clave">
 
 <input type="submit" value="Iniciar"> <br> <br>
 
