@@ -24,6 +24,9 @@ public class Municipio {
 	@OneToMany(mappedBy="municipio", fetch = FetchType.EAGER)
 	private List<Usuario> usuarios;
 	
+	@OneToMany(mappedBy="municipio", fetch = FetchType.EAGER)
+	private List<CentroEd> centros;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="id_depto")
 	private Departamento departamento;
