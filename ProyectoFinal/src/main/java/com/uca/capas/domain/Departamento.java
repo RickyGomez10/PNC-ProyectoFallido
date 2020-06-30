@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Table(schema="public",name="departamento")
 public class Departamento {
 	@Id
-	@Column(name="\"idDepto\"")
+	@Column(name="id_depto")
 	private Integer idDepto;
 	
 	@Column(name="nombre")

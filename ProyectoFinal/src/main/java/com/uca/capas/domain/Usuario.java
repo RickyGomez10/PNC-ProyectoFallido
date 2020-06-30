@@ -24,11 +24,11 @@ public class Usuario {
 	@Column(name="apellido")
 	private String apellido;
 	
-	@Column(name="\"fechaNac\"")
+	@Column(name="fecha_nac")
 	private Date fechaNacimiento;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="\"idMunicipio\"")
+	@JoinColumn(name="id_municipio")
 	private Municipio municipio;
 	
 	@Column(name="direccion")

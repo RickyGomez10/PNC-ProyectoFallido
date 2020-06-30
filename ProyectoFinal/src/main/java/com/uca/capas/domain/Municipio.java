@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(schema="public",name="municipio")
 public class Municipio {
 	@Id
-	@Column(name="\"idMunicipio\"")
+	@Column(name="id_municipio")
 	private Integer idMunicipio;
 	
 	@Column(name="nombre")
@@ -25,7 +25,7 @@ public class Municipio {
 	private List<Usuario> usuarios;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="\"idDepto\"")
+	@JoinColumn(name="id_depto")
 	private Departamento departamento;
 	
 
